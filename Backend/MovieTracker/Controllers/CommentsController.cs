@@ -1,51 +1,89 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using MovieTracker.Data;
+using MovieTracker.Features.Comments;
+using MovieTracker.Features.Movies;
 using MovieTracker.Models;
 using MovieTracker.Models.Dto;
+using MovieTracker.Models.ViewModels;
 
-namespace MovieTracker.Controllers
+namespace MovieTracker.Controllers;
+//hate it
+[Route("Movies/{movieId:int}/comments")]
+[ApiController]
+[Authorize]
+public class CommentsController : ControllerBase
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    [Authorize]
-    public class CommentsController : ControllerBase
+    private readonly IMediator _mediator;
+    private readonly UserManager<AppUser> _userManager;
+
+    public CommentsController(IMediator mediator, UserManager<AppUser> userManager)
     {
-        private readonly ApplicationDbContext _context;
+        _userManager = userManager;
+        _mediator = mediator;
+    }
 
-        public CommentsController(ApplicationDbContext context)
+    [HttpPost]
+    public async Task<IActionResult> AddComment(int movieId, CommentDto commentDto)
+    {
+        var user = await _userManager.GetUserAsync(User);
+        foreach (var claim in User.Claims)
         {
-            _context = context;
+            Console.WriteLine($"Claim Type: {claim.Type}, Claim Value: {claim.Value}");
         }
+        if (user == null)
+            return Unauthorized();
 
-        // GET: api/Comments
-        [HttpGet("{id}")]
-        public async Task<ActionResult<IEnumerable<Comment>>> GetComments(int id)
-        {
-            return await _context.Comments.Where(c => c.MovieId == id).ToListAsync();
-        }
+        var command = new AddCommentCommand(movieId, commentDto.Content, user.Id);
 
-        [HttpPost]
-        public async Task<ActionResult<CommentDto>> PostComment(CommentDto commentDto)
-        {
-            var movie = await _context.Movies.FindAsync(commentDto.MovieId);
+        var result = await _mediator.Send(command);
 
-            if (movie == null)
-            {
-                return NotFound();
-            }
+        return Ok(result);
+    }
 
-            var comment = new Comment
-            {
-                Content = commentDto.Content,
-                Movie = movie
-            };
+    [HttpGet]
+    public async Task<IActionResult> GetComments(int movieId)
+    {
+        var comments = await _mediator.Send(new GetCommentsQuery(movieId));
+        return Ok(comments);
+    }
 
-            _context.Comments.Add(comment);
-            await _context.SaveChangesAsync();
+    [HttpGet("{commentId:int}")]
+    public async Task<IActionResult> GetComment(int movieId, int commentId)
+    {
+        var comment = await _mediator.Send(new GetCommentQuery(commentId));
+        if (comment == null) return NotFound();
+        return Ok(comment);
+    }
 
-            return CreatedAtAction("PostComment", new { id = comment.Id }, commentDto);
-        }
+    [HttpPost("{commentId:int}/upvote")]
+    public async Task<IActionResult> UpVoteComment(int commentId)
+    {
+        var user = await _userManager.GetUserAsync(User);
+        if (user == null)
+            return Unauthorized();
+
+        var command = new UpVoteCommentCommand(commentId, user.Id);
+
+        var result = await _mediator.Send(command);
+
+        return Ok(result);
+    }
+
+    [HttpPost("{commentId:int}/downvote")]
+    public async Task<IActionResult> DownVoteComment(int commentId)
+    {
+        var user = await _userManager.GetUserAsync(User);
+        if (user == null)
+            return Unauthorized();
+
+        var command = new DownVoteCommentCommand(commentId, user.Id);
+
+        var result = await _mediator.Send(command);
+
+        return Ok(result);
     }
 }
+

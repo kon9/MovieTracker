@@ -8,13 +8,14 @@ using System.Text;
 
 namespace MovieTracker.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class AuthController : ControllerBase
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
         private readonly IConfiguration _configuration;
+
         public AuthController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, IConfiguration configuration)
         {
             _userManager = userManager;
@@ -28,47 +29,61 @@ namespace MovieTracker.Controllers
         {
             var appUser = new AppUser()
             {
-                UserName = model.UserName,
-                //Email = model.Email,
+                UserName = model.UserName
             };
 
-            try
+            var result = await _userManager.CreateAsync(appUser, model.Password);
+            if (result.Succeeded)
             {
-                var result = await _userManager.CreateAsync(appUser, model.Password);
                 return Ok(result);
             }
-            catch (Exception)
+            else
             {
-                return BadRequest();
+                return BadRequest(result.Errors);
             }
         }
+
         [HttpPost]
         [Route("Login")]
         public async Task<IActionResult> Login(LoginModel model)
         {
-            var user = await _userManager.FindByNameAsync(model.UserName);
-            var isPasswordCorrect = await _userManager.CheckPasswordAsync(user, model.Password);
-            if (user != null && isPasswordCorrect)
+            var result = await _signInManager.PasswordSignInAsync(model.UserName, model.Password, false, false);
+            if (result.Succeeded)
             {
-                var jwtSecret = _configuration["Settings:JWTSecret"].ToString();
-                var key = Encoding.UTF8.GetBytes(jwtSecret);
-                var tokenDescriptor = new SecurityTokenDescriptor
+                var appUser = _userManager.Users.SingleOrDefault(r => r.UserName == model.UserName);
+                if (appUser == null)
                 {
-                    Subject = new ClaimsIdentity(new Claim[]
-                    {
-                    new Claim("id", user.Id),
-                    new Claim("username", user.UserName)
-                    }),
-                    Expires = DateTime.UtcNow.AddDays(1),
-                    SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
-                };
-                var tokenHandler = new JwtSecurityTokenHandler();
-                var securityToken = tokenHandler.CreateToken(tokenDescriptor);
-                var token = tokenHandler.WriteToken(securityToken);
-                return Ok(new { token });
+                    return BadRequest(new { message = "User does not exist." });
+                }
+                return Ok(GenerateJwtToken(appUser.UserName, appUser));
             }
-            else return BadRequest();
+            else
+            {
+                return BadRequest(new { message = "Invalid username or password" });
+            }
+        }
 
+        private object GenerateJwtToken(string username, IdentityUser user)
+        {
+            var claims = new List<Claim>
+            {
+                new Claim(JwtRegisteredClaimNames.Sub, username),
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                new Claim(ClaimTypes.NameIdentifier, user.Id)
+            };
+
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Settings:JWTSecret"]));
+            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+            var expires = DateTime.UtcNow.AddDays(1);
+
+            var token = new JwtSecurityToken(
+                claims: claims,
+                expires: expires,
+                signingCredentials: creds
+            );
+
+            return new JwtSecurityTokenHandler().WriteToken(token);
         }
     }
 }
+

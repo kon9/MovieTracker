@@ -1,12 +1,15 @@
-﻿using System.Text.Json.Serialization;
-
-namespace MovieTracker.Models;
+﻿namespace MovieTracker.Models;
 
 public class Comment
 {
     public int Id { get; set; }
     public string Content { get; set; }
+    public int Rating { get; set; }
     public int MovieId { get; set; }
-    [JsonIgnore]
     public Movie Movie { get; set; }
+    public string AppUserId { get; set; }
+    public AppUser AppUser { get; set; }
+    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+    public int TotalRating { get; set; }  
+    public ICollection<CommentRating> CommentRatings { get; set; }
 }

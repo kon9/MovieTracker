@@ -1,100 +1,82 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using AutoMapper;
+using MediatR;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using MovieTracker.Data;
+using MovieTracker.Infrastructure.Interfaces;
 using MovieTracker.Models;
 using MovieTracker.Models.Dto;
+using MovieTracker.Models.ViewModels;
+using System.Security.Claims;
+using MovieTracker.Features.Comments;
+using MovieTracker.Features.Movies;
+using MovieTracker.Features.Reviews;
 
-namespace MovieTracker.Controllers
+namespace MovieTracker.Controllers;
+
+
+//[Authorize]
+[ApiController]
+[Route("[controller]")]
+public class MoviesController : ControllerBase
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    [Authorize]
-    public class MoviesController : ControllerBase
+    private readonly IMediator _mediator;
+    private readonly UserManager<AppUser> _userManager;
+
+    public MoviesController(IMediator mediator, UserManager<AppUser> userManager)
     {
-        private readonly ApplicationDbContext _context;
+        _userManager = userManager;
+        _mediator = mediator;
+    }
 
-        public MoviesController(ApplicationDbContext context)
-        {
-            _context = context;
-        }
+    [HttpGet()]
+    public async Task<ActionResult<IEnumerable<MovieVm>>> GetMovies()
+    {
+        var moviesVm = await _mediator.Send(new GetMoviesQuery());
+        return Ok(moviesVm);
+    }
 
-        // GET: api/Movies
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<MovieDto>>> GetMovies()
-        {
-            var movies = await _context.Movies
-                .Include(m => m.Ratings)
-                .ToListAsync();
+    [HttpGet("{id:int}")]
+    public async Task<ActionResult<MovieVm>> GetMovie(int id)
+    {
+        var movieVm = await _mediator.Send(new GetMovieQuery(id));
+        if (movieVm == null) return NotFound();
+        return Ok(movieVm);
+    }
 
-            var movieDtos = movies.Select(m => new MovieDto
-            {
-                Id = m.Id,
-                Name = m.Name,
-                Description = m.Description,
-                ImageUrl = m.ImageUrl,
-                Ratings = m.Ratings.Select(r => new RatingDto
-                {
-                    Id = r.Id,
-                    Score = r.Score,
-                    MovieId = r.MovieId
-                }).ToList()
-            }).ToList();
+    [HttpPost()]
+    public async Task<ActionResult<MovieVm>> CreateMovie(MovieDto movieDto)
+    {
+        var movieVm = await _mediator.Send(new CreateMovieCommand(movieDto));
+        return CreatedAtAction(nameof(GetMovie), new { id = movieVm.Id }, movieVm);
+    }
 
-            return movieDtos;
-        }
+    [HttpPut("{id:int}")]
+    public async Task<IActionResult> UpdateMovie(int id, MovieDto movieDto)
+    {
+        await _mediator.Send(new UpdateMovieCommand(id, movieDto));
+        return NoContent();
+    }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<MovieDto>> GetSingleMovie(int id)
-        {
-            var movie = await _context.Movies
-                .Include(m => m.Ratings)
-                .Include(m => m.Comments)
-                .FirstOrDefaultAsync(m => m.Id == id);
+    [HttpDelete("{id:int}")]
+    public async Task<IActionResult> DeleteMovie(int id)
+    {
+        await _mediator.Send(new DeleteMovieCommand(id));
+        return NoContent();
+    }
 
-            if (movie == null)
-            {
-                return NotFound();
-            }
+    [HttpPost("{id:int}/rating")]
+    public async Task<IActionResult> RateMovie(int id, RatingDto ratingDto)
+    {
+        var rating = await _mediator.Send(new RateMovieCommand(id, ratingDto));
+        return CreatedAtAction("RateMovie", new { id = rating.Id }, rating);
+    }
 
-            var movieDto = new MovieDto
-            {
-                Id = movie.Id,
-                Name = movie.Name,
-                Description = movie.Description,
-                ImageUrl = movie.ImageUrl,
-                Ratings = movie.Ratings.Select(r => new RatingDto
-                {
-                    Id = r.Id,
-                    Score = r.Score,
-                    MovieId = r.MovieId
-                }).ToList(),
-                Comments = movie.Comments.Select(c => new CommentDto
-                {
-                    Id = c.Id,
-                    Content = c.Content,
-                    MovieId = c.MovieId
-                }).ToList()
-            };
-
-            return movieDto;
-        }
-
-
-        [HttpPost]
-        public async Task<ActionResult<MovieDto>> PostMovie(MovieDto movieDto)
-        {
-            var movie = new Movie
-            {
-                Name = movieDto.Name,
-                Description = movieDto.Description,
-                ImageUrl = movieDto.ImageUrl
-            };
-
-            _context.Movies.Add(movie);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("PostMovie", new { id = movie.Id }, movieDto);
-        }
+    [HttpPut("{id:int}/rating")]
+    public async Task<IActionResult> UpdateRating(int id, RatingDto ratingDto)
+    {
+        await _mediator.Send(new UpdateRatingCommand(id, ratingDto));
+        return NoContent();
     }
 }
+

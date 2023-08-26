@@ -4,5 +4,4 @@ namespace MovieTracker.Models;
 
 public class AppUser : IdentityUser
 {
-
 }

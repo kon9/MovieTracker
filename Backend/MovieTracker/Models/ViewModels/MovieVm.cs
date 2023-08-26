@@ -1,6 +1,6 @@
-﻿namespace MovieTracker.Models;
+﻿namespace MovieTracker.Models.ViewModels;
 
-public class Movie
+public class MovieVm
 {
     public int Id { get; set; }
     public string Name { get; set; }
