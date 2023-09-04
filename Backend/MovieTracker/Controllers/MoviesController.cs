@@ -15,9 +15,9 @@ using MovieTracker.Features.Reviews;
 namespace MovieTracker.Controllers;
 
 
-//[Authorize]
+[Authorize]
 [ApiController]
-[Route("[controller]")]
+[Route("movies")]
 public class MoviesController : ControllerBase
 {
     private readonly IMediator _mediator;
@@ -68,14 +68,20 @@ public class MoviesController : ControllerBase
     [HttpPost("{id:int}/rating")]
     public async Task<IActionResult> RateMovie(int id, RatingDto ratingDto)
     {
-        var rating = await _mediator.Send(new RateMovieCommand(id, ratingDto));
-        return CreatedAtAction("RateMovie", new { id = rating.Id }, rating);
+        var user = await _userManager.GetUserAsync(User);
+        if (user == null) return Unauthorized();
+
+        var rating = await _mediator.Send(new RateMovieCommand(id, ratingDto, user.Id));
+        return CreatedAtAction("RateMovie", new { id = rating.Id }, rating);//returns appuser model BUG
     }
 
     [HttpPut("{id:int}/rating")]
     public async Task<IActionResult> UpdateRating(int id, RatingDto ratingDto)
     {
-        await _mediator.Send(new UpdateRatingCommand(id, ratingDto));
+        var user = await _userManager.GetUserAsync(User);
+        if (user == null) return Unauthorized();
+
+        await _mediator.Send(new UpdateRatingCommand(id, ratingDto, user.Id));
         return NoContent();
     }
 }

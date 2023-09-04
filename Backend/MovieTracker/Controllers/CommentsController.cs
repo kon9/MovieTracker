@@ -10,10 +10,10 @@ using MovieTracker.Models.Dto;
 using MovieTracker.Models.ViewModels;
 
 namespace MovieTracker.Controllers;
-//hate it
-[Route("Movies/{movieId:int}/comments")]
-[ApiController]
+
 [Authorize]
+[ApiController]
+[Route("movies/{movieId:int}/comments")]
 public class CommentsController : ControllerBase
 {
     private readonly IMediator _mediator;
@@ -29,10 +29,6 @@ public class CommentsController : ControllerBase
     public async Task<IActionResult> AddComment(int movieId, CommentDto commentDto)
     {
         var user = await _userManager.GetUserAsync(User);
-        foreach (var claim in User.Claims)
-        {
-            Console.WriteLine($"Claim Type: {claim.Type}, Claim Value: {claim.Value}");
-        }
         if (user == null)
             return Unauthorized();
 

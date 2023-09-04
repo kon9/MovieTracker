@@ -5,7 +5,7 @@ using MovieTracker.Models.Dto;
 
 namespace MovieTracker.Features.Reviews;
 
-public record RateMovieCommand(int Id, RatingDto RatingDto) : IRequest<Rating>;
+public record RateMovieCommand(int Id, RatingDto RatingDto, string AppUserId) : IRequest<Rating>;
 
 public class RateMovieHandler : IRequestHandler<RateMovieCommand, Rating>
 {
@@ -18,7 +18,13 @@ public class RateMovieHandler : IRequestHandler<RateMovieCommand, Rating>
 
     public async Task<Rating> Handle(RateMovieCommand request, CancellationToken cancellationToken)
     {
-        var rating = new Rating { Score = request.RatingDto.Score, MovieId = request.Id };
+        var rating = new Rating
+        {
+            Score = request.RatingDto.Score,
+            MovieId = request.Id,
+            AppUserId = request.AppUserId
+        };
+
         await _moviesRepository.AddRatingToMovie(request.Id, rating);
         return rating;
     }

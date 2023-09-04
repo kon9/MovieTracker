@@ -26,9 +26,20 @@ public class MoviesRepository : Repository<Movie>, IMoviesRepository
             .AverageAsync(rating => rating.Score);
     }
 
-    public Task AddRatingToMovie(int movieId, Rating rating)
+    public async Task AddRatingToMovie(int movieId, Rating rating)
     {
-        throw new NotImplementedException();
+        var existingRating = await _context.Ratings
+            .FirstOrDefaultAsync(r => r.MovieId == movieId && r.AppUserId == rating.AppUserId);
+
+        if (existingRating != null)
+        {
+            existingRating.Score = rating.Score;
+        }
+        else
+        {
+            _context.Ratings.Add(rating);
+        }
+        await _context.SaveChangesAsync();
     }
 
 
