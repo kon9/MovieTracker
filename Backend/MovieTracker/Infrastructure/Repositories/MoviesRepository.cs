@@ -39,9 +39,13 @@ public class MoviesRepository : Repository<Movie>, IMoviesRepository
         {
             _context.Ratings.Add(rating);
         }
+
+        // Recalculate average rating
+        var movie = await _context.Movies.FindAsync(movieId);
+        movie.AverageRating = await CalculateAverageRating(movieId);
+
         await _context.SaveChangesAsync();
     }
-
 
     public async Task UpdateRatingForMovie(int movieId, Rating rating)
     {
@@ -51,8 +55,19 @@ public class MoviesRepository : Repository<Movie>, IMoviesRepository
         if (existingRating != null)
         {
             existingRating.Score = rating.Score;
+
+            // Recalculate average rating
+            var movie = await _context.Movies.FindAsync(movieId);
+            movie.AverageRating = await CalculateAverageRating(movieId);
+
             await _context.SaveChangesAsync();
         }
     }
+    private async Task<double> CalculateAverageRating(int movieId)
+    {
+        var ratings = await _context.Ratings.Where(r => r.MovieId == movieId).ToListAsync();
+        if (ratings.Count == 0) return 0;
 
+        return ratings.Average(r => r.Score);
+    }
 }
