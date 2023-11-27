@@ -31,7 +31,6 @@ public class ReplyToCommentHandler : IRequestHandler<ReplyToCommentCommand, Comm
         await _commentsRepository.CreateAsync(replyComment);
 
         return replyComment;
-
     }
 }
 

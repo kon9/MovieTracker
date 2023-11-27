@@ -22,7 +22,7 @@ services.AddMediatR(Assembly.GetExecutingAssembly());
 services.AddEndpointsApiExplorer();
 services.AddAutoMapper(typeof(MappingProfile).Assembly);
 services.AddDbContext<ApplicationDbContext>(o
-    => o.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    => o.UseNpgsql(builder.Configuration.GetConnectionString("PostgresConnectionString")));
 
 services.AddDefaultIdentity<AppUser>().AddEntityFrameworkStores<ApplicationDbContext>();
 

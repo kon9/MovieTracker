@@ -40,7 +40,6 @@ public class MoviesRepository : Repository<Movie>, IMoviesRepository
             _context.Ratings.Add(rating);
         }
 
-        // Recalculate average rating
         var movie = await _context.Movies.FindAsync(movieId);
         movie.AverageRating = await CalculateAverageRating(movieId);
 
@@ -56,7 +55,6 @@ public class MoviesRepository : Repository<Movie>, IMoviesRepository
         {
             existingRating.Score = rating.Score;
 
-            // Recalculate average rating
             var movie = await _context.Movies.FindAsync(movieId);
             movie.AverageRating = await CalculateAverageRating(movieId);
 

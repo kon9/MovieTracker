@@ -11,7 +11,7 @@ public class MappingProfile : Profile
     {
         CreateMap<Movie, MovieDto>().ReverseMap();
         CreateMap<Movie, MovieVm>().ReverseMap();
-        CreateMap<AppUser, AppUserDto>().ReverseMap(); // Assuming you have AppUserDto
+        CreateMap<AppUser, AppUserDto>().ReverseMap(); 
         CreateMap<Comment, CommentDto>().ReverseMap();
         CreateMap<Comment, CommentVm>()
             .ForMember(

@@ -81,5 +81,19 @@ public class CommentsController : ControllerBase
 
         return Ok(result);
     }
+
+    [HttpPost("{commentId:int}/reply")]
+    public async Task<IActionResult> ReplyToComment(int commentId, CommentDto commentDto)
+    {
+        var user = await _userManager.GetUserAsync(User);
+        if (user == null)
+            return Unauthorized();
+
+        var command = new ReplyToCommentCommand(commentId, commentDto.Content, user.Id);
+
+        var result = await _mediator.Send(command);
+
+        return Ok(result);
+    }
 }
 
