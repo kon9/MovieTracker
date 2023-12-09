@@ -19,7 +19,7 @@ public class MappingProfile : Profile
                 opt => opt.MapFrom(src => src.AppUser.UserName)
             );
         CreateMap<Rating, RatingDto>().ReverseMap();
-        CreateMap<Rating, ReviewVm>().ReverseMap();
+        CreateMap<Rating, RatingVm>().ReverseMap();
         //TODO Configure mapper
     }
 }

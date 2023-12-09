@@ -10,20 +10,16 @@ namespace MovieTracker.Features.Movies;
 public record UpdateMovieCommand(int Id, MovieDto MovieDto) : IRequest<Unit>;
 public class UpdateMovieHandler : IRequestHandler<UpdateMovieCommand, Unit>
 {
-    private readonly IMoviesRepository _moviesRepository;
-    private readonly IMapper _mapper;
+    private readonly IMovieService _movieService;
 
-    public UpdateMovieHandler(IMoviesRepository moviesRepository, IMapper mapper)
+    public UpdateMovieHandler(IMovieService movieService)
     {
-        _moviesRepository = moviesRepository;
-        _mapper = mapper;
+        _movieService = movieService;
     }
 
     public async Task<Unit> Handle(UpdateMovieCommand request, CancellationToken cancellationToken)
     {
-        var movie = _mapper.Map<Movie>(request.MovieDto);
-        movie.Id = request.Id;
-        await _moviesRepository.UpdateAsync(movie);
+        await _movieService.UpdateMovieAsync(request.Id, request.MovieDto);
         return Unit.Value;
     }
 }

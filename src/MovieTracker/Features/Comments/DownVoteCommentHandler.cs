@@ -6,26 +6,17 @@ namespace MovieTracker.Features.Comments;
 
 public record DownVoteCommentCommand(int CommentId, string AppUserId) : IRequest<Response<int>>;
 
-public class DownVoteCommentCommandHandler : IRequestHandler<DownVoteCommentCommand, Response<int>>
+public class DownVoteCommentHandler : IRequestHandler<DownVoteCommentCommand, Response<int>>
 {
-    private readonly ICommentsRepository _commentsRepository;
+    private readonly ICommentService _commentService;
 
-    public DownVoteCommentCommandHandler(ICommentsRepository commentsRepository)
+    public DownVoteCommentHandler(ICommentService commentService)
     {
-        _commentsRepository = commentsRepository;
+        _commentService = commentService;
     }
-
+    
     public async Task<Response<int>> Handle(DownVoteCommentCommand request, CancellationToken cancellationToken)
     {
-        try
-        {
-            await _commentsRepository.DownVoteComment(request.CommentId, request.AppUserId);
-            var newRating = await _commentsRepository.GetRatingForComment(request.CommentId);
-            return new Response<int>(true, "Successfully downvoted the comment.", newRating);
-        }
-        catch (Exception ex)
-        {
-            return new Response<int>(false, ex.Message);
-        }
+        return await _commentService.DownVoteCommentAsync(request.CommentId, request.AppUserId);
     }
 }

@@ -9,18 +9,15 @@ public record GetCommentsQuery(int MovieId) : IRequest<IEnumerable<CommentVm>>;
 
 public class GetCommentsHandler : IRequestHandler<GetCommentsQuery, IEnumerable<CommentVm>>
 {
-    private readonly ICommentsRepository _commentsRepository;
-    private readonly IMapper _mapper;
+    private readonly ICommentService _commentService;
 
-    public GetCommentsHandler(ICommentsRepository commentsRepository, IMapper mapper)
+    public GetCommentsHandler(ICommentService commentService)
     {
-        _commentsRepository = commentsRepository;
-        _mapper = mapper;
+        _commentService = commentService;
     }
 
     public async Task<IEnumerable<CommentVm>> Handle(GetCommentsQuery request, CancellationToken cancellationToken)
     {
-        var comments = await _commentsRepository.GetAllCommentsForMovieAsync(request.MovieId);
-        return _mapper.Map<IEnumerable<CommentVm>>(comments);
+        return await _commentService.GetCommentsForMovieAsync(request.MovieId);
     }
 }

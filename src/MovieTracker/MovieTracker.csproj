@@ -29,8 +29,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Infrastructure\Interfaces\" />
-	  <Folder Include="Features\Movies\" />
 	  <Folder Include="Infrastructure\Mapper\" />
 	  <Folder Include="Infrastructure\Migrations\" />
 	</ItemGroup>

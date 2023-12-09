@@ -7,4 +7,5 @@ public class Movie
     public string Description { get; set; }
     public string ImageUrl { get; set; }
     public double AverageRating { get; set; }
+    public ICollection<FavoriteMovie> FavoriteMovies { get; set; }
 }

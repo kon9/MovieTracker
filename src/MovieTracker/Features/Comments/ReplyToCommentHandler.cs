@@ -1,36 +1,25 @@
 ﻿using MediatR;
 using MovieTracker.Infrastructure.Interfaces;
 using MovieTracker.Models;
+using MovieTracker.Models.Dto;
+using MovieTracker.Models.ViewModels;
 
 namespace MovieTracker.Features.Comments;
 
-public record ReplyToCommentCommand(int CommentId, string Content, string AppUserId) : IRequest<Comment>;
+public record ReplyToCommentCommand(int CommentId, string Content, string AppUserId) : IRequest<CommentVm>;
 
-public class ReplyToCommentHandler : IRequestHandler<ReplyToCommentCommand, Comment>
+public class ReplyToCommentHandler : IRequestHandler<ReplyToCommentCommand, CommentVm>
 {
-    private readonly ICommentsRepository _commentsRepository;
+    private readonly ICommentService _commentService;
 
-    public ReplyToCommentHandler(ICommentsRepository commentsRepository)
+    public ReplyToCommentHandler(ICommentService commentService)
     {
-        _commentsRepository = commentsRepository;
+        _commentService = commentService;
     }
 
-    public async Task<Comment> Handle(ReplyToCommentCommand request, CancellationToken cancellationToken)
+    public async Task<CommentVm> Handle(ReplyToCommentCommand request, CancellationToken cancellationToken)
     {
-        var parentComment = await _commentsRepository.GetByIdAsync(request.CommentId);
-        if (parentComment == null) throw new ArgumentException("Parent comment not found.");
-        var replyComment = new Comment
-        {
-            Content = request.Content,
-            MovieId = parentComment.MovieId,
-            AppUserId = request.AppUserId,
-            CreatedAt = DateTime.UtcNow,
-            ParentCommentId = request.CommentId
-        };
-
-        await _commentsRepository.CreateAsync(replyComment);
-
-        return replyComment;
+        return await _commentService.ReplyToCommentAsync(request.CommentId, new CommentDto { Content = request.Content }, request.AppUserId);
     }
 }
 

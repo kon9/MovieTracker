@@ -12,6 +12,7 @@ using MovieTracker.Models;
 using System.Text;
 using MediatR;
 using MovieTracker.Infrastructure.Mapper;
+using MovieTracker.Infrastructure.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -102,6 +103,8 @@ services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 services.AddScoped<IUserRepository, UserRepository>();
 services.AddScoped<IMoviesRepository, MoviesRepository>();
 services.AddScoped<ICommentsRepository, CommentsRepository>();
+services.AddScoped<IMovieService, MovieService>();
+services.AddScoped<ICommentService, CommentService>();
 
 var app = builder.Build();
 

@@ -6,17 +6,16 @@ namespace MovieTracker.Features.Movies;
 public record DeleteMovieCommand(int Id) : IRequest<Unit>;
 public class DeleteMovieHandler : IRequestHandler<DeleteMovieCommand, Unit>
 {
-    private readonly IMoviesRepository _moviesRepository;
+    private readonly IMovieService _movieService;
 
-    public DeleteMovieHandler(IMoviesRepository moviesRepository)
+    public DeleteMovieHandler(IMovieService movieService)
     {
-        _moviesRepository = moviesRepository;
+        _movieService = movieService;
     }
 
     public async Task<Unit> Handle(DeleteMovieCommand request, CancellationToken cancellationToken)
     {
-        var movie = await _moviesRepository.GetByIdAsync(request.Id);
-        await _moviesRepository.DeleteAsync(movie);
+        await _movieService.DeleteMovieAsync(request.Id);
         return Unit.Value;
     }
 }

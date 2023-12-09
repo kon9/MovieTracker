@@ -11,19 +11,15 @@ public record CreateMovieCommand(MovieDto MovieDto) : IRequest<MovieVm>;
 
 public class CreateMovieHandler : IRequestHandler<CreateMovieCommand, MovieVm>
 {
-    private readonly IMoviesRepository _movieRepository;
-    private readonly IMapper _mapper;
+    private readonly IMovieService _movieService;
 
-    public CreateMovieHandler(IMoviesRepository movieRepository, IMapper mapper)
+    public CreateMovieHandler(IMovieService movieService)
     {
-        _movieRepository = movieRepository;
-        _mapper = mapper;
+        _movieService = movieService;
     }
 
     public async Task<MovieVm> Handle(CreateMovieCommand request, CancellationToken cancellationToken)
     {
-        var movie = _mapper.Map<Movie>(request.MovieDto);
-        await _movieRepository.CreateAsync(movie);
-        return _mapper.Map<MovieVm>(movie);
+        return await _movieService.CreateMovieAsync(request.MovieDto);
     }
 }

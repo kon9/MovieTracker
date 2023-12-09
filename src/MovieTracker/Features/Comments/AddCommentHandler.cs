@@ -1,32 +1,24 @@
 ﻿using MediatR;
 using MovieTracker.Infrastructure.Interfaces;
 using MovieTracker.Models;
+using MovieTracker.Models.Dto;
+using MovieTracker.Models.ViewModels;
 
 namespace MovieTracker.Features.Comments;
 
-public record AddCommentCommand(int MovieId, string Content, string AppUserId) : IRequest<Comment>;
+public record AddCommentCommand(int MovieId, string Content, string AppUserId) : IRequest<CommentVm>;
 
-public class AddCommentHandler : IRequestHandler<AddCommentCommand, Comment>
+public class AddCommentHandler : IRequestHandler<AddCommentCommand, CommentVm>
 {
-    private readonly ICommentsRepository _commentsRepository;
+    private readonly ICommentService _commentService;
 
-    public AddCommentHandler(ICommentsRepository commentsRepository)
+    public AddCommentHandler(ICommentService commentService)
     {
-        _commentsRepository = commentsRepository;
+        _commentService = commentService;
     }
 
-    public async Task<Comment> Handle(AddCommentCommand request, CancellationToken cancellationToken)
+    public async Task<CommentVm> Handle(AddCommentCommand request, CancellationToken cancellationToken)
     {
-        var comment = new Comment
-        {
-            Content = request.Content,
-            MovieId = request.MovieId,
-            AppUserId = request.AppUserId,
-            CreatedAt = DateTime.UtcNow
-        };
-
-        await _commentsRepository.CreateAsync(comment);
-
-        return comment;
+        return await _commentService.AddCommentAsync(request.MovieId, new CommentDto { Content = request.Content }, request.AppUserId);
     }
 }

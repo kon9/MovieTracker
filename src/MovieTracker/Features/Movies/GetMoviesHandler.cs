@@ -9,24 +9,15 @@ public record GetMoviesQuery() : IRequest<IEnumerable<MovieVm>>;
 
 public class GetMoviesHandler : IRequestHandler<GetMoviesQuery, IEnumerable<MovieVm>>
 {
-    private readonly IMoviesRepository _movieRepository;
-    private readonly IMapper _mapper;
+    private readonly IMovieService _movieService;
 
-    public GetMoviesHandler(IMoviesRepository movieRepository, IMapper mapper)
+    public GetMoviesHandler(IMovieService movieService)
     {
-        _movieRepository = movieRepository;
-        _mapper = mapper;
+        _movieService = movieService;
     }
 
     public async Task<IEnumerable<MovieVm>> Handle(GetMoviesQuery request, CancellationToken cancellationToken)
     {
-        var movies = await _movieRepository.GetAllAsync();
-
-        if (movies == null || !movies.Any())
-        {
-            return new List<MovieVm>();
-        }
-
-        return _mapper.Map<IEnumerable<MovieVm>>(movies);
+        return await _movieService.GetAllMoviesAsync();
     }
 }

@@ -72,17 +72,7 @@ public class MoviesController : ControllerBase
         if (user == null) return Unauthorized();
 
         var rating = await _mediator.Send(new RateMovieCommand(id, ratingDto, user.Id));
-        return CreatedAtAction("RateMovie", new { id = rating.Id }, rating);//returns appuser model BUG
-    }
-
-    [HttpPut("{id:int}/rating")]
-    public async Task<IActionResult> UpdateRating(int id, RatingDto ratingDto)
-    {
-        var user = await _userManager.GetUserAsync(User);
-        if (user == null) return Unauthorized();
-
-        await _mediator.Send(new UpdateRatingCommand(id, ratingDto, user.Id));
-        return NoContent();
+        return CreatedAtAction("RateMovie", new { id = rating.Id }, rating);
     }
 }
 

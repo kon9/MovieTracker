@@ -6,26 +6,17 @@ namespace MovieTracker.Features.Comments;
 
 public record UpVoteCommentCommand(int CommentId, string AppUserId) : IRequest<Response<int>>;
 
-public class UpVoteCommentCommandHandler : IRequestHandler<UpVoteCommentCommand, Response<int>>
+public class UpVoteCommentHandler : IRequestHandler<UpVoteCommentCommand, Response<int>>
 {
-    private readonly ICommentsRepository _commentsRepository;
+    private readonly ICommentService _commentService;
 
-    public UpVoteCommentCommandHandler(ICommentsRepository commentsRepository)
+    public UpVoteCommentHandler(ICommentService commentService)
     {
-        _commentsRepository = commentsRepository;
+        _commentService = commentService;
     }
 
     public async Task<Response<int>> Handle(UpVoteCommentCommand request, CancellationToken cancellationToken)
     {
-        try
-        {
-            await _commentsRepository.UpVoteComment(request.CommentId, request.AppUserId);
-            var newRating = await _commentsRepository.GetRatingForComment(request.CommentId);
-            return new Response<int>(true, "Successfully upvoted the comment.", newRating);
-        }
-        catch (Exception ex)
-        {
-            return new Response<int>(false, ex.Message);
-        }
+        return await _commentService.UpVoteCommentAsync(request.CommentId, request.AppUserId);
     }
 }

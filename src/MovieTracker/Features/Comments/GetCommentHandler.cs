@@ -9,18 +9,15 @@ public record GetCommentQuery(int Id) : IRequest<CommentVm>;
 
 public class GetCommentHandler : IRequestHandler<GetCommentQuery, CommentVm>
 {
-    private readonly ICommentsRepository _commentsRepository;
-    private readonly IMapper _mapper;
+    private readonly ICommentService _commentService;
 
-    public GetCommentHandler(ICommentsRepository commentsRepository, IMapper mapper)
+    public GetCommentHandler(ICommentService commentService)
     {
-        _commentsRepository = commentsRepository;
-        _mapper = mapper;
+        _commentService = commentService;
     }
 
     public async Task<CommentVm> Handle(GetCommentQuery request, CancellationToken cancellationToken)
     {
-        var comment = await _commentsRepository.GetByIdAsync(request.Id);
-        return _mapper.Map<CommentVm>(comment);
+        return await _commentService.GetCommentAsync(request.Id);
     }
 }
