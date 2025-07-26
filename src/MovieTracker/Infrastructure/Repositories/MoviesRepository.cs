@@ -1,9 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MovieTracker.Infrastructure.Data;
 using MovieTracker.Infrastructure.Interfaces;
+using MovieTracker.Infrastructure.Repo;
 using MovieTracker.Models;
 
-namespace MovieTracker.Infrastructure.Repo;
+namespace MovieTracker.Infrastructure.Repositories;
 public class MoviesRepository : Repository<Movie>, IMoviesRepository
 {
     public MoviesRepository(ApplicationDbContext context) : base(context)
