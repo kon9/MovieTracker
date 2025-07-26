@@ -10,6 +10,12 @@
 - Дискорд бот/ телеграм бот
 
 
+## Docker compose
 ```shell
 docker compose up -d
+```
+
+## Migrations
+```shell
+docker compose run --rm migrate
 ```
