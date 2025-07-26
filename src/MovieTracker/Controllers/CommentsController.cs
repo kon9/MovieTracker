@@ -1,13 +1,9 @@
-﻿using MediatR;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using MovieTracker.Features.Comments;
-using MovieTracker.Features.Movies;
+using MovieTracker.Infrastructure.Interfaces;
 using MovieTracker.Models;
 using MovieTracker.Models.Dto;
-using MovieTracker.Models.ViewModels;
 
 namespace MovieTracker.Controllers;
 
@@ -16,13 +12,13 @@ namespace MovieTracker.Controllers;
 [Route("movies/{movieId:int}/comments")]
 public class CommentsController : ControllerBase
 {
-    private readonly IMediator _mediator;
     private readonly UserManager<AppUser> _userManager;
+    private readonly ICommentService _commentService;
 
-    public CommentsController(IMediator mediator, UserManager<AppUser> userManager)
+    public CommentsController(UserManager<AppUser> userManager, ICommentService commentService)
     {
         _userManager = userManager;
-        _mediator = mediator;
+        _commentService = commentService;
     }
 
     [HttpPost]
@@ -32,9 +28,7 @@ public class CommentsController : ControllerBase
         if (user == null)
             return Unauthorized();
 
-        var command = new AddCommentCommand(movieId, commentDto.Content, user.Id);
-
-        var result = await _mediator.Send(command);
+        var result = await  _commentService.AddCommentAsync(movieId, new CommentDto { Content = commentDto.Content }, user.Id);
 
         return Ok(result);
     }
@@ -42,15 +36,15 @@ public class CommentsController : ControllerBase
     [HttpGet]
     public async Task<IActionResult> GetComments(int movieId)
     {
-        var comments = await _mediator.Send(new GetCommentsQuery(movieId));
+        var comments = await _commentService.GetCommentsForMovieAsync(movieId);
         return Ok(comments);
     }
 
     [HttpGet("{commentId:int}")]
     public async Task<IActionResult> GetComment(int movieId, int commentId)
     {
-        var comment = await _mediator.Send(new GetCommentQuery(commentId));
-        if (comment == null) return NotFound();
+        var comment = await _commentService.GetCommentAsync(commentId);
+        if (comment is null) return NotFound();
         return Ok(comment);
     }
 
@@ -61,9 +55,7 @@ public class CommentsController : ControllerBase
         if (user == null)
             return Unauthorized();
 
-        var command = new UpVoteCommentCommand(commentId, user.Id);
-
-        var result = await _mediator.Send(command);
+        var result = await _commentService.UpVoteCommentAsync(commentId, user.Id);
 
         return Ok(result);
     }
@@ -75,9 +67,7 @@ public class CommentsController : ControllerBase
         if (user == null)
             return Unauthorized();
 
-        var command = new DownVoteCommentCommand(commentId, user.Id);
-
-        var result = await _mediator.Send(command);
+        var result = await _commentService.DownVoteCommentAsync(commentId, user.Id);
 
         return Ok(result);
     }
@@ -89,9 +79,7 @@ public class CommentsController : ControllerBase
         if (user == null)
             return Unauthorized();
 
-        var command = new ReplyToCommentCommand(commentId, commentDto.Content, user.Id);
-
-        var result = await _mediator.Send(command);
+        var result = await _commentService.ReplyToCommentAsync(commentId, new CommentDto { Content = commentDto.Content },user.Id);
 
         return Ok(result);
     }

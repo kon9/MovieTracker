@@ -1,16 +1,10 @@
-﻿using AutoMapper;
-using MediatR;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using MovieTracker.Infrastructure.Interfaces;
 using MovieTracker.Models;
 using MovieTracker.Models.Dto;
 using MovieTracker.Models.ViewModels;
-using System.Security.Claims;
-using MovieTracker.Features.Comments;
-using MovieTracker.Features.Movies;
-using MovieTracker.Features.Reviews;
 
 namespace MovieTracker.Controllers;
 
@@ -20,26 +14,26 @@ namespace MovieTracker.Controllers;
 [Route("movies")]
 public class MoviesController : ControllerBase
 {
-    private readonly IMediator _mediator;
     private readonly UserManager<AppUser> _userManager;
+    private readonly IMovieService _movieService;
 
-    public MoviesController(IMediator mediator, UserManager<AppUser> userManager)
+    public MoviesController(UserManager<AppUser> userManager, IMovieService movieService)
     {
         _userManager = userManager;
-        _mediator = mediator;
+        _movieService = movieService;
     }
 
     [HttpGet()]
     public async Task<ActionResult<IEnumerable<MovieVm>>> GetMovies()
     {
-        var moviesVm = await _mediator.Send(new GetMoviesQuery());
+        var moviesVm = await _movieService.GetAllMoviesAsync();
         return Ok(moviesVm);
     }
 
     [HttpGet("{id:int}")]
-    public async Task<ActionResult<MovieVm>> GetMovie(int id)
+    public async Task<ActionResult<MovieVm>> GetMovie(int movieId)
     {
-        var movieVm = await _mediator.Send(new GetMovieQuery(id));
+        var movieVm = await _movieService.GetMovieAsync(movieId);
         if (movieVm == null) return NotFound();
         return Ok(movieVm);
     }
@@ -47,31 +41,31 @@ public class MoviesController : ControllerBase
     [HttpPost()]
     public async Task<ActionResult<MovieVm>> CreateMovie(MovieDto movieDto)
     {
-        var movieVm = await _mediator.Send(new CreateMovieCommand(movieDto));
+        var movieVm = await _movieService.CreateMovieAsync(movieDto);
         return CreatedAtAction(nameof(GetMovie), new { id = movieVm.Id }, movieVm);
     }
 
     [HttpPut("{id:int}")]
-    public async Task<IActionResult> UpdateMovie(int id, MovieDto movieDto)
+    public async Task<IActionResult> UpdateMovie(int movieId, MovieDto movieDto)
     {
-        await _mediator.Send(new UpdateMovieCommand(id, movieDto));
+        await _movieService.UpdateMovieAsync(movieId, movieDto);
         return NoContent();
     }
 
     [HttpDelete("{id:int}")]
-    public async Task<IActionResult> DeleteMovie(int id)
+    public async Task<IActionResult> DeleteMovie(int movieId)
     {
-        await _mediator.Send(new DeleteMovieCommand(id));
+        await _movieService.DeleteMovieAsync(movieId);
         return NoContent();
     }
 
     [HttpPost("{id:int}/rating")]
-    public async Task<IActionResult> RateMovie(int id, RatingDto ratingDto)
+    public async Task<IActionResult> RateMovie(int movieId, RatingDto ratingDto)
     {
         var user = await _userManager.GetUserAsync(User);
         if (user == null) return Unauthorized();
 
-        var rating = await _mediator.Send(new RateMovieCommand(id, ratingDto, user.Id));
+        var rating = await _movieService.RateMovieAsync(movieId, ratingDto, user.Id);
         return CreatedAtAction("RateMovie", new { id = rating.Id }, rating);
     }
 }
