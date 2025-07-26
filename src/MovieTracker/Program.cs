@@ -9,8 +9,8 @@ using MovieTracker.Infrastructure.Interfaces;
 using MovieTracker.Infrastructure.Repo;
 using MovieTracker.Models;
 using System.Text;
+using MediatR;
 using MovieTracker.Infrastructure.Mapper;
-using MovieTracker.Infrastructure.Repositories;
 using MovieTracker.Infrastructure.Services;
 
 var builder = WebApplication.CreateBuilder(args);
