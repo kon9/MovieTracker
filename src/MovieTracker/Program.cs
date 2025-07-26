@@ -2,7 +2,6 @@ using System.Reflection;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using MovieTracker.Infrastructure.Data;
@@ -19,7 +18,6 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 var services = builder.Services;
 
-services.AddMediatR(Assembly.GetExecutingAssembly());
 services.AddEndpointsApiExplorer();
 services.AddAutoMapper(typeof(MappingProfile).Assembly);
 services.AddDbContext<ApplicationDbContext>(o

@@ -24,6 +24,5 @@ namespace MovieTracker.Controllers
             _mapper = mapper;
         }
 
-
     }
 }
