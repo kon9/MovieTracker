@@ -9,9 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieTracker.Tests", "src\M
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{77F55D3F-0BD1-49FE-848F-D6415C543D47}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aux", "aux", "{9EAED7B3-526B-4F0A-A3E6-3F336A0DB5C2}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{9EAED7B3-526B-4F0A-A3E6-3F336A0DB5C2}"
 	ProjectSection(SolutionItems) = preProject
-		src\docker-compose.yaml = src\docker-compose.yaml
+		README.md = README.md
+		docker-compose.yaml = docker-compose.yaml
 	EndProjectSection
 EndProject
 Global
