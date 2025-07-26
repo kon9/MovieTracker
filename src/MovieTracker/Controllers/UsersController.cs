@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using MovieTracker.Infrastructure.Interfaces;
 using MovieTracker.Models;
-using MovieTracker.Models.ViewModels;
 
 namespace MovieTracker.Controllers
 {
