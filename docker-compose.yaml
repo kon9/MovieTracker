@@ -6,26 +6,8 @@ services:
     restart: always
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_DB: MovieTracker
-      POSTGRES_PASSWORD: "123"      
+      POSTGRES_DB: postgres
+      POSTGRES_PASSWORD: "postgres"      
     ports:
       - "15432:5432"
 
-  redis:
-    image: redis
-    container_name: local-redis
-    restart: always
-    ports:
-      - "16379:6379"
-
-  migrate:                       
-    image: flyway/flyway:11
-    container_name: movie-migrations
-    depends_on: [postgresql]      
-    command: -connectRetries=60 migrate
-    environment:                 
-      FLYWAY_URL: jdbc:postgresql://postgresql:5432/MovieTracker
-      FLYWAY_USER: postgres
-      FLYWAY_PASSWORD: "123"       
-    volumes:
-      - ./migrations:/flyway/sql

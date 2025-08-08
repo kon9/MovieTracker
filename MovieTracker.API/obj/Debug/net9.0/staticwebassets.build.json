@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "0AYC6yzoT4OcZ7U9lAB7bNJJUJyoLN+kHCkIyh0ZQ/8=",
+  "Source": "MovieTracker.API",
+  "BasePath": "_content/MovieTracker.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
