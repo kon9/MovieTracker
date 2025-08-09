@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\MovieTracker.API.props" />
-</Project>
