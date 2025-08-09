@@ -3,6 +3,7 @@ using MovieTracker.Core.Repositories;
 using MovieTracker.Core.Services;
 using MovieTracker.Infrastructure.Data;
 using MovieTracker.Infrastructure.Mapping;
+using MovieTracker.Infrastructure.Migrations;
 using MovieTracker.Infrastructure.Repositories;
 using MovieTracker.Infrastructure.Services;
 
@@ -10,6 +11,17 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
+
+// Add CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend", policy =>
+    {
+        policy.AllowAnyOrigin()
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -48,7 +60,17 @@ builder.Services.AddScoped<IQueueService, QueueService>();
 builder.Services.AddScoped<ICommentService, CommentService>();
 builder.Services.AddScoped<IRatingService, RatingService>();
 
+// Add Migration Runner
+builder.Services.AddScoped<IMigrationRunner, DapperMigrationRunner>();
+
 var app = builder.Build();
+
+// Run migrations
+using (var scope = app.Services.CreateScope())
+{
+    var migrationRunner = scope.ServiceProvider.GetRequiredService<IMigrationRunner>();
+    await migrationRunner.RunMigrationsAsync();
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -59,8 +81,16 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseCors("AllowFrontend");
+
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.Use(async (context, next) =>
+{
+    Console.WriteLine($"Request: {context.Request.Method} {context.Request.Path}");
+    await next();
+});
 
 app.Run();

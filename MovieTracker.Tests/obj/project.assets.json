@@ -2459,6 +2459,8 @@
         "dependencies": {
           "AutoMapper": "15.0.1",
           "Dapper": "2.1.66",
+          "Microsoft.Extensions.Configuration.Abstractions": "9.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "9.0.0",
           "MovieTracker.Core": "1.0.0",
           "Npgsql": "9.0.3"
         },
@@ -7009,6 +7011,7 @@
     "net9.0": [
       "AutoMapper >= 15.0.1",
       "Microsoft.AspNetCore.Mvc.Core >= 2.2.5",
+      "Microsoft.Extensions.Logging >= 9.0.8",
       "Microsoft.NET.Test.Sdk >= 17.12.0",
       "Moq >= 4.20.72",
       "MovieTracker.API >= 1.0.0",
@@ -7020,45 +7023,38 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ivank\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Dimas\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ivank\\Desktop\\MovieTracker\\MovieTracker.Tests\\MovieTracker.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\Dimas\\Desktop\\MovieTrackerLatest\\MovieTracker\\MovieTracker.Tests\\MovieTracker.Tests.csproj",
       "projectName": "MovieTracker.Tests",
-      "projectPath": "C:\\Users\\ivank\\Desktop\\MovieTracker\\MovieTracker.Tests\\MovieTracker.Tests.csproj",
-      "packagesPath": "C:\\Users\\ivank\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ivank\\Desktop\\MovieTracker\\MovieTracker.Tests\\obj\\",
+      "projectPath": "C:\\Users\\Dimas\\Desktop\\MovieTrackerLatest\\MovieTracker\\MovieTracker.Tests\\MovieTracker.Tests.csproj",
+      "packagesPath": "C:\\Users\\Dimas\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Dimas\\Desktop\\MovieTrackerLatest\\MovieTracker\\MovieTracker.Tests\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\ivank\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Dimas\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\Users\\ivank\\Desktop\\MovieTracker\\MovieTracker.API\\MovieTracker.API.csproj": {
-              "projectPath": "C:\\Users\\ivank\\Desktop\\MovieTracker\\MovieTracker.API\\MovieTracker.API.csproj"
+            "C:\\Users\\Dimas\\Desktop\\MovieTrackerLatest\\MovieTracker\\MovieTracker.API\\MovieTracker.API.csproj": {
+              "projectPath": "C:\\Users\\Dimas\\Desktop\\MovieTrackerLatest\\MovieTracker\\MovieTracker.API\\MovieTracker.API.csproj"
             },
-            "C:\\Users\\ivank\\Desktop\\MovieTracker\\MovieTracker.Core\\MovieTracker.Core.csproj": {
-              "projectPath": "C:\\Users\\ivank\\Desktop\\MovieTracker\\MovieTracker.Core\\MovieTracker.Core.csproj"
+            "C:\\Users\\Dimas\\Desktop\\MovieTrackerLatest\\MovieTracker\\MovieTracker.Core\\MovieTracker.Core.csproj": {
+              "projectPath": "C:\\Users\\Dimas\\Desktop\\MovieTrackerLatest\\MovieTracker\\MovieTracker.Core\\MovieTracker.Core.csproj"
             },
-            "C:\\Users\\ivank\\Desktop\\MovieTracker\\MovieTracker.Infrastructure\\MovieTracker.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\ivank\\Desktop\\MovieTracker\\MovieTracker.Infrastructure\\MovieTracker.Infrastructure.csproj"
+            "C:\\Users\\Dimas\\Desktop\\MovieTrackerLatest\\MovieTracker\\MovieTracker.Infrastructure\\MovieTracker.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\Dimas\\Desktop\\MovieTrackerLatest\\MovieTracker\\MovieTracker.Infrastructure\\MovieTracker.Infrastructure.csproj"
             }
           }
         }
@@ -7072,8 +7068,7 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      },
-      "SdkAnalysisLevel": "9.0.200"
+      }
     },
     "frameworks": {
       "net9.0": {
@@ -7086,6 +7081,10 @@
           "Microsoft.AspNetCore.Mvc.Core": {
             "target": "Package",
             "version": "[2.2.5, )"
+          },
+          "Microsoft.Extensions.Logging": {
+            "target": "Package",
+            "version": "[9.0.8, )"
           },
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
@@ -7124,7 +7123,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.202/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

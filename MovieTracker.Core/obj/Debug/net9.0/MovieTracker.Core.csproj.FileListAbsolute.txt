@@ -21,3 +21,15 @@ C:\Users\ivank\Desktop\MovieTracker\MovieTracker.Core\obj\Debug\net9.0\MovieTrac
 C:\Users\ivank\Desktop\MovieTracker\MovieTracker.Core\obj\Debug\net9.0\refint\MovieTracker.Core.dll
 C:\Users\ivank\Desktop\MovieTracker\MovieTracker.Core\obj\Debug\net9.0\MovieTracker.Core.pdb
 C:\Users\ivank\Desktop\MovieTracker\MovieTracker.Core\obj\Debug\net9.0\ref\MovieTracker.Core.dll
+C:\Users\Dimas\Desktop\MovieTrackerLatest\MovieTracker\MovieTracker.Core\bin\Debug\net9.0\MovieTracker.Core.deps.json
+C:\Users\Dimas\Desktop\MovieTrackerLatest\MovieTracker\MovieTracker.Core\bin\Debug\net9.0\MovieTracker.Core.dll
+C:\Users\Dimas\Desktop\MovieTrackerLatest\MovieTracker\MovieTracker.Core\bin\Debug\net9.0\MovieTracker.Core.pdb
+C:\Users\Dimas\Desktop\MovieTrackerLatest\MovieTracker\MovieTracker.Core\obj\Debug\net9.0\MovieTracker.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dimas\Desktop\MovieTrackerLatest\MovieTracker\MovieTracker.Core\obj\Debug\net9.0\MovieTracker.Core.AssemblyInfoInputs.cache
+C:\Users\Dimas\Desktop\MovieTrackerLatest\MovieTracker\MovieTracker.Core\obj\Debug\net9.0\MovieTracker.Core.AssemblyInfo.cs
+C:\Users\Dimas\Desktop\MovieTrackerLatest\MovieTracker\MovieTracker.Core\obj\Debug\net9.0\MovieTracker.Core.csproj.CoreCompileInputs.cache
+C:\Users\Dimas\Desktop\MovieTrackerLatest\MovieTracker\MovieTracker.Core\obj\Debug\net9.0\MovieTracker.Core.sourcelink.json
+C:\Users\Dimas\Desktop\MovieTrackerLatest\MovieTracker\MovieTracker.Core\obj\Debug\net9.0\MovieTracker.Core.dll
+C:\Users\Dimas\Desktop\MovieTrackerLatest\MovieTracker\MovieTracker.Core\obj\Debug\net9.0\refint\MovieTracker.Core.dll
+C:\Users\Dimas\Desktop\MovieTrackerLatest\MovieTracker\MovieTracker.Core\obj\Debug\net9.0\MovieTracker.Core.pdb
+C:\Users\Dimas\Desktop\MovieTrackerLatest\MovieTracker\MovieTracker.Core\obj\Debug\net9.0\ref\MovieTracker.Core.dll

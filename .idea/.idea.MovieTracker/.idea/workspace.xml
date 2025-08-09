@@ -9,87 +9,129 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5abd5431-f860-4315-a1c3-0c6374b801c3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/codeql.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/summary.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MovieTracker.dir/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MovieTracker.dir/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MovieTracker.dir/.idea/indexLayout.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MovieTracker.dir/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MovieTracker/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MovieTracker/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MovieTracker/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MovieTracker/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MovieTracker/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MovieTracker.sln" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MovieTracker/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MovieTracker/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MovieTracker/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MovieTracker/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.API/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.API/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.API/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.API/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.API/bin/Debug/net9.0/MovieTracker.API.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.API/bin/Debug/net9.0/MovieTracker.API.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.API/bin/Debug/net9.0/MovieTracker.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.API/bin/Debug/net9.0/MovieTracker.API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.API/bin/Debug/net9.0/MovieTracker.API.exe" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.API/bin/Debug/net9.0/MovieTracker.API.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.API/bin/Debug/net9.0/MovieTracker.API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.API/bin/Debug/net9.0/MovieTracker.API.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.API/bin/Debug/net9.0/MovieTracker.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.API/bin/Debug/net9.0/MovieTracker.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.API/bin/Debug/net9.0/MovieTracker.Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.API/bin/Debug/net9.0/MovieTracker.Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.API/bin/Debug/net9.0/MovieTracker.Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.API/bin/Debug/net9.0/MovieTracker.Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.API/bin/Debug/net9.0/MovieTracker.Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.API/bin/Debug/net9.0/MovieTracker.Infrastructure.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.API/bin/Debug/net9.0/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.API/bin/Debug/net9.0/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.API/obj/Debug/net9.0/MovieTracker.API.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.API/obj/Debug/net9.0/MovieTracker.API.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.API/obj/Debug/net9.0/MovieTracker.API.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.API/obj/Debug/net9.0/MovieTracker.API.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.API/obj/Debug/net9.0/MovieTracker.API.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.API/obj/Debug/net9.0/MovieTracker.API.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.API/obj/Debug/net9.0/MovieTracker.API.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.API/obj/Debug/net9.0/MovieTracker.API.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.API/obj/Debug/net9.0/MovieTracker.API.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.API/obj/Debug/net9.0/MovieTracker.API.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.API/obj/Debug/net9.0/MovieTracker.API.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.API/obj/Debug/net9.0/MovieTracker.API.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.API/obj/Debug/net9.0/MovieTracker.API.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.API/obj/Debug/net9.0/MovieTracker.API.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.API/obj/Debug/net9.0/MovieTracker.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.API/obj/Debug/net9.0/MovieTracker.API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.API/obj/Debug/net9.0/MovieTracker.API.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.API/obj/Debug/net9.0/MovieTracker.API.genruntimeconfig.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.API/obj/Debug/net9.0/MovieTracker.API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.API/obj/Debug/net9.0/MovieTracker.API.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.API/obj/Debug/net9.0/MovieTracker.API.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.API/obj/Debug/net9.0/MovieTracker.API.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.API/obj/Debug/net9.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.API/obj/Debug/net9.0/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.API/obj/Debug/net9.0/ref/MovieTracker.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.API/obj/Debug/net9.0/ref/MovieTracker.API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.API/obj/Debug/net9.0/refint/MovieTracker.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.API/obj/Debug/net9.0/refint/MovieTracker.API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.API/obj/MovieTracker.API.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.API/obj/MovieTracker.API.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.API/obj/MovieTracker.API.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.API/obj/MovieTracker.API.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.API/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.API/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.API/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.API/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.API/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.API/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.API/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.API/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.API/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.API/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Core/DTOs/MovieDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Core/DTOs/MovieDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Core/Entities/Movie.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Core/Entities/Movie.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Core/bin/Debug/net9.0/MovieTracker.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Core/bin/Debug/net9.0/MovieTracker.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Core/bin/Debug/net9.0/MovieTracker.Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Core/bin/Debug/net9.0/MovieTracker.Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Core/obj/Debug/net9.0/MovieTracker.Core.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Core/obj/Debug/net9.0/MovieTracker.Core.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Core/obj/Debug/net9.0/MovieTracker.Core.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Core/obj/Debug/net9.0/MovieTracker.Core.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Core/obj/Debug/net9.0/MovieTracker.Core.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Core/obj/Debug/net9.0/MovieTracker.Core.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Core/obj/Debug/net9.0/MovieTracker.Core.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Core/obj/Debug/net9.0/MovieTracker.Core.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Core/obj/Debug/net9.0/MovieTracker.Core.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Core/obj/Debug/net9.0/MovieTracker.Core.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Core/obj/Debug/net9.0/MovieTracker.Core.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Core/obj/Debug/net9.0/MovieTracker.Core.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Core/obj/Debug/net9.0/MovieTracker.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Core/obj/Debug/net9.0/MovieTracker.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Core/obj/Debug/net9.0/MovieTracker.Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Core/obj/Debug/net9.0/MovieTracker.Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Core/obj/Debug/net9.0/MovieTracker.Core.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Core/obj/Debug/net9.0/MovieTracker.Core.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Core/obj/Debug/net9.0/ref/MovieTracker.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Core/obj/Debug/net9.0/ref/MovieTracker.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Core/obj/Debug/net9.0/refint/MovieTracker.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Core/obj/Debug/net9.0/refint/MovieTracker.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Core/obj/MovieTracker.Core.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Core/obj/MovieTracker.Core.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Core/obj/MovieTracker.Core.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Core/obj/MovieTracker.Core.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Core/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Core/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Core/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Core/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Core/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Core/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Core/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Core/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Core/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Core/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Infrastructure/MovieTracker.Infrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Infrastructure/MovieTracker.Infrastructure.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Infrastructure/bin/Debug/net9.0/MovieTracker.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Infrastructure/bin/Debug/net9.0/MovieTracker.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Infrastructure/bin/Debug/net9.0/MovieTracker.Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Infrastructure/bin/Debug/net9.0/MovieTracker.Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Infrastructure/bin/Debug/net9.0/MovieTracker.Infrastructure.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Infrastructure/bin/Debug/net9.0/MovieTracker.Infrastructure.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Infrastructure/bin/Debug/net9.0/MovieTracker.Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Infrastructure/bin/Debug/net9.0/MovieTracker.Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Infrastructure/bin/Debug/net9.0/MovieTracker.Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Infrastructure/bin/Debug/net9.0/MovieTracker.Infrastructure.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Infrastructure/obj/Debug/net9.0/MovieTracker.Infrastructure.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Infrastructure/obj/Debug/net9.0/MovieTracker.Infrastructure.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Infrastructure/obj/Debug/net9.0/MovieTracker.Infrastructure.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Infrastructure/obj/Debug/net9.0/MovieTracker.Infrastructure.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Infrastructure/obj/Debug/net9.0/MovieTracker.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Infrastructure/obj/Debug/net9.0/MovieTracker.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Infrastructure/obj/Debug/net9.0/MovieTracker.Infrastructure.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Infrastructure/obj/Debug/net9.0/MovieTracker.Infrastructure.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Infrastructure/obj/Debug/net9.0/MovieTracker.Infrastructure.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Infrastructure/obj/Debug/net9.0/MovieTracker.Infrastructure.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Infrastructure/obj/Debug/net9.0/MovieTracker.Infrastructure.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Infrastructure/obj/Debug/net9.0/MovieTracker.Infrastructure.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Infrastructure/obj/Debug/net9.0/MovieTracker.Infrastructure.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Infrastructure/obj/Debug/net9.0/MovieTracker.Infrastructure.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Infrastructure/obj/Debug/net9.0/MovieTracker.Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Infrastructure/obj/Debug/net9.0/MovieTracker.Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Infrastructure/obj/Debug/net9.0/MovieTracker.Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Infrastructure/obj/Debug/net9.0/MovieTracker.Infrastructure.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Infrastructure/obj/Debug/net9.0/MovieTracker.Infrastructure.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Infrastructure/obj/Debug/net9.0/MovieTracker.Infrastructure.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Infrastructure/obj/Debug/net9.0/ref/MovieTracker.Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Infrastructure/obj/Debug/net9.0/ref/MovieTracker.Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Infrastructure/obj/Debug/net9.0/refint/MovieTracker.Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Infrastructure/obj/Debug/net9.0/refint/MovieTracker.Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Infrastructure/obj/MovieTracker.Infrastructure.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Infrastructure/obj/MovieTracker.Infrastructure.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Infrastructure/obj/MovieTracker.Infrastructure.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Infrastructure/obj/MovieTracker.Infrastructure.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Infrastructure/obj/MovieTracker.Infrastructure.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Infrastructure/obj/MovieTracker.Infrastructure.csproj.nuget.g.targets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Infrastructure/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Infrastructure/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Infrastructure/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Infrastructure/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Infrastructure/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Infrastructure/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Infrastructure/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Infrastructure/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Infrastructure/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Infrastructure/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Tests/AuthenticationTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Tests/AuthenticationTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Tests/MovieTracker.Tests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Tests/MovieTracker.Tests.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Tests/QueueManagementTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Tests/QueueManagementTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Tests/SimpleUserServiceTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Tests/SimpleUserServiceTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Tests/TestHelpers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Tests/TestHelpers.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Tests/bin/Debug/net9.0/.msCoverageSourceRootsMapping_MovieTracker.Tests" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Tests/bin/Debug/net9.0/.msCoverageSourceRootsMapping_MovieTracker.Tests" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Tests/bin/Debug/net9.0/CoverletSourceRootsMapping_MovieTracker.Tests" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Tests/bin/Debug/net9.0/CoverletSourceRootsMapping_MovieTracker.Tests" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Tests/bin/Debug/net9.0/MovieTracker.API.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Tests/bin/Debug/net9.0/MovieTracker.API.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Tests/bin/Debug/net9.0/MovieTracker.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Tests/bin/Debug/net9.0/MovieTracker.API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Tests/bin/Debug/net9.0/MovieTracker.API.exe" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Tests/bin/Debug/net9.0/MovieTracker.API.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Tests/bin/Debug/net9.0/MovieTracker.API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Tests/bin/Debug/net9.0/MovieTracker.API.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Tests/bin/Debug/net9.0/MovieTracker.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Tests/bin/Debug/net9.0/MovieTracker.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Tests/bin/Debug/net9.0/MovieTracker.Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Tests/bin/Debug/net9.0/MovieTracker.Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Tests/bin/Debug/net9.0/MovieTracker.Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Tests/bin/Debug/net9.0/MovieTracker.Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Tests/bin/Debug/net9.0/MovieTracker.Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Tests/bin/Debug/net9.0/MovieTracker.Infrastructure.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Tests/bin/Debug/net9.0/MovieTracker.Tests.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Tests/bin/Debug/net9.0/MovieTracker.Tests.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Tests/bin/Debug/net9.0/MovieTracker.Tests.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Tests/bin/Debug/net9.0/MovieTracker.Tests.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Tests/bin/Debug/net9.0/MovieTracker.Tests.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Tests/bin/Debug/net9.0/MovieTracker.Tests.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Tests/obj/Debug/net9.0/MovieTracker.Tests.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Tests/obj/Debug/net9.0/MovieTracker.Tests.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Tests/obj/Debug/net9.0/MovieTracker.Tests.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Tests/obj/Debug/net9.0/MovieTracker.Tests.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Tests/obj/Debug/net9.0/MovieTracker.Tests.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Tests/obj/Debug/net9.0/MovieTracker.Tests.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Tests/obj/Debug/net9.0/MovieTracker.Tests.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Tests/obj/Debug/net9.0/MovieTracker.Tests.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Tests/obj/Debug/net9.0/MovieTracker.Tests.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Tests/obj/Debug/net9.0/MovieTracker.Tests.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Tests/obj/Debug/net9.0/MovieTracker.Tests.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Tests/obj/Debug/net9.0/MovieTracker.Tests.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Tests/obj/Debug/net9.0/MovieTracker.Tests.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Tests/obj/Debug/net9.0/MovieTracker.Tests.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Tests/obj/Debug/net9.0/MovieTracker.Tests.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Tests/obj/Debug/net9.0/MovieTracker.Tests.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Tests/obj/Debug/net9.0/MovieTracker.Tests.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Tests/obj/Debug/net9.0/MovieTracker.Tests.genruntimeconfig.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Tests/obj/Debug/net9.0/MovieTracker.Tests.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Tests/obj/Debug/net9.0/MovieTracker.Tests.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Tests/obj/Debug/net9.0/MovieTracker.Tests.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Tests/obj/Debug/net9.0/MovieTracker.Tests.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Tests/obj/Debug/net9.0/ref/MovieTracker.Tests.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Tests/obj/Debug/net9.0/ref/MovieTracker.Tests.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Tests/obj/Debug/net9.0/refint/MovieTracker.Tests.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Tests/obj/Debug/net9.0/refint/MovieTracker.Tests.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Tests/obj/MovieTracker.Tests.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Tests/obj/MovieTracker.Tests.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Tests/obj/MovieTracker.Tests.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Tests/obj/MovieTracker.Tests.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Tests/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Tests/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Tests/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Tests/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Tests/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Tests/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Tests/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Tests/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.Tests/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.Tests/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieTracker.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/MovieTracker.sln.DotSettings.user" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/V1__create_movies_table.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/V2__create_comments_table.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/V3__create_ratings_table.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/V4__create_comment_ratings_table.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.idea/.idea.MovieTracker/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.idea/.idea.MovieTracker/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.idea/.idea.MovieTracker/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.idea/.idea.MovieTracker/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.idea/.idea.MovieTracker/.idea/indexLayout.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.idea/.idea.MovieTracker/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker.Tests/AutomapperTests.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker.Tests/MovieTracker.Tests.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker.Tests/Usings.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/Controllers/AuthController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/Controllers/CommentsController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/Controllers/MoviesController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/Controllers/QueueController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/Controllers/UsersController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/Infrastructure/Data/ApplicationDbContext.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/Infrastructure/Interfaces/Repository/ICommentsRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/Infrastructure/Interfaces/Repository/IMoviesRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/Infrastructure/Interfaces/Repository/IQueueRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/Infrastructure/Interfaces/Repository/IRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/Infrastructure/Interfaces/Repository/IUserProfileRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/Infrastructure/Interfaces/Repository/IUserRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/Infrastructure/Interfaces/Service/ICommentService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/Infrastructure/Interfaces/Service/IMovieService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/Infrastructure/Interfaces/Service/IQueueService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/Infrastructure/Mapper/MapperRegistration.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/Infrastructure/Mapper/MappingProfile.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/Infrastructure/Repositories/CommentsRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/Infrastructure/Repositories/MoviesRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/Infrastructure/Repositories/QueueRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/Infrastructure/Repositories/Repository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/Infrastructure/Repositories/UserProfileRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/Infrastructure/Repositories/UserRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/Infrastructure/Services/CommentService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/Infrastructure/Services/MovieService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/Infrastructure/Services/QueueService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/MigrationsOld/20231127133528_initial.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/MigrationsOld/20231127133528_initial.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/MigrationsOld/ApplicationDbContextModelSnapshot.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/Models/AppUser.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/Models/Comment.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/Models/CommentRating.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/Models/Dto/AppUserDto.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/Models/Dto/CommentDto.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/Models/Dto/MovieDto.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/Models/Dto/QueueDto.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/Models/Dto/RatingDto.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/Models/FavoriteMovie.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/Models/LoginModel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/Models/Movie.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/Models/Queue.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/Models/Rating.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/Models/RegisterModel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/Models/Response.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/Models/UserProfile.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/Models/ViewModels/AppUserVm.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/Models/ViewModels/CommentVm.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/Models/ViewModels/MovieVm.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/Models/ViewModels/QueueVm.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/Models/ViewModels/RatingVm.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/MovieTracker.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/Program.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/Properties/launchSettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/appsettings.Development.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieTracker/appsettings.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,31 +139,37 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DpaMonitoringSettings">
-    <option name="firstShow" value="false" />
+    <option name="autoShow" value="false" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "kon9"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;kon9&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
     "url": "https://github.com/kon9/MovieTracker.git",
-    "accountId": "d2f4b400-9698-47c6-9020-8431837cb82f"
+    "accountId": "99ae3a0a-2d29-48e2-80c8-27957ae71e92"
   }
 }]]></component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 7
-}]]></component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/.nuget/packages/microsoft.net.test.sdk/17.12.0/build/netcoreapp3.1/Microsoft.NET.Test.Sdk.Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Dimas/Desktop/MovieTrackerLatest/MovieTracker/MovieTracker.API/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MovieTracker.Frontend/package-lock.json" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="310hHtRW9YdQi2klmKtv1QRHZAk" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -129,8 +177,11 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    ".NET Launch Settings Profile.MovieTracker.API: http.executor": "Run",
     ".NET Launch Settings Profile.MovieTracker.API: https.executor": "Run",
+    "Docker.Dockerfile.executor": "Run",
     "Docker.docker-compose.yaml.postgresql: Compose Deployment.executor": "Debug",
+    "Docker.docker-compose.yaml: Compose Deployment.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
@@ -139,6 +190,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Users\\Dimas\\Desktop\\MovieTrackerLatest\\MovieTracker\\MovieTracker.Frontend\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -147,7 +199,7 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.MovieTracker.API: https">
+  <component name="RunManager" selected=".NET Launch Settings Profile.MovieTracker.API: http">
     <configuration name="MovieTracker.API: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/MovieTracker.API/MovieTracker.API.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net9.0" />
@@ -178,8 +230,33 @@
         <option name="Build" />
       </method>
     </configuration>
+    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
-      <deployment type="docker-compose.yml" />
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile" />
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yaml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose.yaml" />
+        </settings>
+      </deployment>
+      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
       <method v="2" />
     </configuration>
     <configuration name="docker-compose.yaml.postgresql: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
@@ -198,6 +275,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.docker-compose.yaml: Compose Deployment" />
+        <item itemvalue="Docker.Dockerfile" />
         <item itemvalue="Docker.docker-compose.yaml.postgresql: Compose Deployment" />
       </list>
     </recent_temporary>
@@ -211,12 +290,14 @@
       <option name="presentableId" value="Default" />
       <updated>1754666814437</updated>
       <workItem from="1754666816705" duration="881000" />
+      <workItem from="1754725299293" duration="5502000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

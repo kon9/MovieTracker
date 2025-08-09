@@ -8,7 +8,7 @@ namespace MovieTracker.Core.DTOs
         public string? Director { get; set; }
         public string? Genre { get; set; }
         public int? ReleaseYear { get; set; }
-        public string? Rating { get; set; }
+        public int? Rating { get; set; }
         public int? Runtime { get; set; }
         public string? PosterUrl { get; set; }
         public string? TrailerUrl { get; set; }
@@ -25,7 +25,7 @@ namespace MovieTracker.Core.DTOs
         public string? Director { get; set; }
         public string? Genre { get; set; }
         public int? ReleaseYear { get; set; }
-        public string? Rating { get; set; }
+        public int? Rating { get; set; }
         public int? Runtime { get; set; }
         public string? PosterUrl { get; set; }
         public string? TrailerUrl { get; set; }
@@ -38,7 +38,7 @@ namespace MovieTracker.Core.DTOs
         public string? Director { get; set; }
         public string? Genre { get; set; }
         public int? ReleaseYear { get; set; }
-        public string? Rating { get; set; }
+        public int? Rating { get; set; }
         public int? Runtime { get; set; }
         public string? PosterUrl { get; set; }
         public string? TrailerUrl { get; set; }

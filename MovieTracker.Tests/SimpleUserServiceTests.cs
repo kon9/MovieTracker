@@ -3,6 +3,7 @@ using MovieTracker.Core.DTOs;
 using MovieTracker.Core.Entities;
 using MovieTracker.Core.Repositories;
 using MovieTracker.Core.Services;
+using MovieTracker.Core.Utilities;
 using MovieTracker.Infrastructure.Services;
 using Xunit;
 
@@ -41,7 +42,7 @@ namespace MovieTracker.Tests
         }
 
         [Fact]
-        public async Task LoginAsync_ValidCredentials_ThrowsExceptionWithoutMapper()
+        public async Task LoginAsync_ValidCredentials_WorksWithoutMapper()
         {
             // Arrange
             var loginDto = new LoginDto
@@ -55,20 +56,23 @@ namespace MovieTracker.Tests
                 Id = 1,
                 Username = "testuser",
                 Email = "test@example.com",
-                PasswordHash = "hashedpassword",
+                PasswordHash = PasswordHasher.HashPassword("password123"),
                 CreatedAt = DateTime.UtcNow
             };
 
             _mockUserRepository.Setup(x => x.GetByUsernameAsync(loginDto.Username))
                 .ReturnsAsync(user);
 
-            // Act & Assert
-            await Assert.ThrowsAsync<NullReferenceException>(
-                () => _userService.LoginAsync(loginDto));
+            _mockUserRepository.Setup(x => x.UpdateAsync(It.IsAny<User>()))
+                .ReturnsAsync(user);
+
+            // Act & Assert - LoginAsync doesn't use mapper, so it should work fine
+            var result = await _userService.LoginAsync(loginDto);
+            Assert.Contains("logged in successfully", result);
         }
 
         [Fact]
-        public async Task GetByIdAsync_ExistingUser_ReturnsNullWithoutMapper()
+        public async Task GetByIdAsync_ExistingUser_ThrowsExceptionWithoutMapper()
         {
             // Arrange
             var userId = 1;
@@ -77,17 +81,16 @@ namespace MovieTracker.Tests
                 Id = userId,
                 Username = "testuser",
                 Email = "test@example.com",
+                PasswordHash = "hashedpassword",
                 CreatedAt = DateTime.UtcNow
             };
 
             _mockUserRepository.Setup(x => x.GetByIdAsync(userId))
                 .ReturnsAsync(user);
 
-            // Act
-            var result = await _userService.GetByIdAsync(userId);
-
-            // Assert
-            Assert.Null(result);
+            // Act & Assert - GetByIdAsync uses mapper, so it should throw NullReferenceException
+            await Assert.ThrowsAsync<NullReferenceException>(
+                () => _userService.GetByIdAsync(userId));
         }
 
         [Fact]

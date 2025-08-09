@@ -1,3 +1,4 @@
+using AutoMapper;
 using Moq;
 using MovieTracker.Core.DTOs;
 using MovieTracker.Core.Entities;

@@ -22,12 +22,13 @@ namespace MovieTracker.Tests
             _mockQueueItemRepository = new Mock<IQueueItemRepository>();
             _mockQueueMemberRepository = new Mock<IQueueMemberRepository>();
             _mockUserRepository = new Mock<IUserRepository>();
+            var mapper = TestHelpers.CreateTestMapper();
             _queueService = new QueueService(
                 _mockQueueRepository.Object,
                 _mockQueueItemRepository.Object,
                 _mockQueueMemberRepository.Object,
                 _mockUserRepository.Object,
-                null!);
+                mapper);
         }
 
         [Fact]

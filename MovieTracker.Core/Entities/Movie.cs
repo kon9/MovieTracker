@@ -22,7 +22,7 @@ namespace MovieTracker.Core.Entities
         public int? ReleaseYear { get; set; }
         
         [StringLength(50)]
-        public string? Rating { get; set; } // PG, PG-13, R, etc.
+        public int? Rating { get; set; } // PG, PG-13, R, etc.
         
         public int? Runtime { get; set; } // in minutes
         
